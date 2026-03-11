@@ -58,12 +58,9 @@ with pkgs; let
     # python
     ruff
     pyright
-    poetry
-    uv
 
     # rust
     cargo
-    rustc
     rustfmt
     rust-analyzer
     clippy

@@ -27,7 +27,6 @@
     });
   in [
     marble-shell
-    inputs.battery-notifier.packages.${system}.default
     pkgs.astal.mpris
     pkgs.brightnessctl
     pkgs.pulseaudio # pactl

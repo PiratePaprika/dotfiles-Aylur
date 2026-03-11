@@ -45,6 +45,10 @@
       {
         "language": "html",
         "path": "./snip/html.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snip/markdown.json"
       }
     ]
   }

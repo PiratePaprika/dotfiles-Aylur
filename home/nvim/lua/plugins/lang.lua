@@ -93,7 +93,13 @@ do -- lsp
 		ruff = {},
 		ruff_lsp = {},
 		pyright = {},
-		rust_analyzer = {},
+		rust_analyzer = {
+			["rust-analyzer"] = {
+				check = {
+					command = "clippy",
+				},
+			},
+		},
 		vtsls = {
 			complete_function_calls = true,
 			vtsls = {

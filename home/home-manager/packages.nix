@@ -61,14 +61,11 @@ in {
     pkgs.pnpm
     pkgs.yarn
     gjs-wrapped
-
     python-wrapped
     pkgs.uv
     pkgs.poetry
-
     pkgs.gcc
-    pkgs.cargo
-    pkgs.rustc
+    pkgs.rustup
     pkgs.go
     pkgs.clang-tools
   ];

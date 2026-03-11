@@ -22,18 +22,6 @@
     marble-shell = {
       url = "git+ssh://git@github.com/Aylur/marble-shell";
     };
-    icon-browser = {
-      url = "github:Aylur/icon-browser";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    battery-notifier = {
-      url = "github:Aylur/battery-notifier";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    lf = {
-      url = "github:gokcehan/lf";
-      flake = false;
-    };
     firefox-gnome-theme = {
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;

@@ -265,7 +265,7 @@ def nx [...packages: string] {
     }
 
     echo $pkgs
-    nix shell ...$pkgs
+    nix shell --impure ...$pkgs
 }
 
 # Push private vault repo to remote

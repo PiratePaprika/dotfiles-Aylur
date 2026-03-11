@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  system = pkgs.stdenv.hostPlatform.system;
-in {
+{pkgs, ...}: {
   environment.systemPackages = [
     # cli
     pkgs.imagemagick
@@ -44,7 +38,6 @@ in {
     pkgs.ghostty
     pkgs.spotify
     pkgs.fragments
-    inputs.icon-browser.packages.${system}.default
     (pkgs.mpv.override {scripts = [pkgs.mpvScripts.mpris];})
 
     # wayland
