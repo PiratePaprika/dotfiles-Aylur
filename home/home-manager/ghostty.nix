@@ -15,6 +15,10 @@
         (builtins.attrNames files);
     };
 in {
+  home.packages = [
+    pkgs.ghostty
+  ];
+
   xdg.configFile."ghostty".source = files {
     "config" = values {
       command = "tmux";

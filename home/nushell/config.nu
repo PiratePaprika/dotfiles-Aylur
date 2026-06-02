@@ -1,23 +1,5 @@
 load-env {
     SHELL: $nu.current-exe
-    PATH: ([~/.local/bin] | append $env.PATH)
-
-    FILE_MANAGER: "nautilus"
-    BROWSER: "firefox"
-    TERMINAL: "ghostty"
-    VISUAL: "nvim"
-    EDITOR: "nvim"
-    PAGER: "bat"
-
-    BAT_THEME: "base16"
-
-    GOMODCACHE: ($env.HOME | path join .cache go pkg mod)
-    GOPATH: ($env.HOME | path join .local share go)
-
-    NIXPKGS_ALLOW_INSECURE: 1
-    NIXPKGS_ALLOW_UNFREE: 1
-
-    QT_XCB_GL_INTEGRATION: "none" # kde-connect
 
     STARSHIP_SHELL: "nu"
     STARSHIP_CONFIG: ($nu.data-dir | path join starship.toml)
@@ -180,14 +162,14 @@ $env.config = {
 alias ":q" = exit
 alias "db" = distrobox
 alias "del" = gio trash
-alias "dev" = nix develop -c nu '-c' nvim
+alias "dev" = nix develop -c nu
+alias "nv" = nix develop -c nvim
 alias "ga" = git add
 alias "gc" = git commit
 alias "gr" = git reset --soft HEAD~1
 alias "gs" = git status
 alias "l" = ls
 alias "ll" = eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time
-alias "nv" = nvim
 alias "q" = exit
 alias "tree" = eza --tree
 alias "és" = ls
@@ -202,11 +184,6 @@ def "nx gc" [older_than = "7d"] {
     sudo nix-collect-garbage -d --delete-older-than $older_than
     nix-collect-garbage -d --delete-older-than $older_than
     nix-store --optimise
-}
-
-# Shortcut for "home-manager switch"
-def "nx hm" [] {
-    home-manager switch --flake . -b backup
 }
 
 # Shortcut for "nix run"

@@ -1,5 +1,8 @@
-{pkgs ? import <nixpkgs> {}}:
-with pkgs; let
+inputs:
+with inputs.pkgs; let
+  system = pkgs.stdenv.hostPlatform.system;
+  unstable = inputs.inputs.nixpkgs-unstable.legacyPackages.${system};
+
   bins = [
     git
     gcc
@@ -13,7 +16,7 @@ with pkgs; let
     fzf
     cargo
     lazygit
-    nodePackages.npm
+    nodejs
     python3
     luajitPackages.luarocks
     lua51Packages.lua
@@ -37,14 +40,14 @@ with pkgs; let
     bun
     yarn
     pnpm
-    nodePackages.npm
-    nodePackages.prettier
+    prettier
     tailwindcss-language-server
     svelte-language-server
     astro-language-server
     vue-language-server
     vscode-langservers-extracted
     vtsls
+    typescript-go
     markdownlint-cli2
     marksman
 
@@ -89,7 +92,7 @@ with pkgs; let
       xclip
     ];
 in
-  wrapNeovimUnstable neovim-unwrapped {
+  unstable.wrapNeovimUnstable unstable.neovim-unwrapped {
     withRuby = true;
     withNodeJs = true;
     withPython3 = true;

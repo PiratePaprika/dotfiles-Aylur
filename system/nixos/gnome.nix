@@ -4,6 +4,9 @@
       gnomeExtensions.just-perfection
       gnomeExtensions.color-picker
       gnomeExtensions.user-themes
+      wl-clipboard
+      qogir-icon-theme
+      nerd-fonts.ubuntu
     ];
 
     gnome.excludePackages = with pkgs; [
@@ -41,10 +44,7 @@
 
   services = {
     desktopManager.gnome.enable = true;
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
+    displayManager.gdm.enable = true;
   };
 
   programs.dconf.profiles.gdm.databases = [

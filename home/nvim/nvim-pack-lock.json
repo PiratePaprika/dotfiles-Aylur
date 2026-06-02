@@ -10,7 +10,7 @@
     },
     "SchemaStore.nvim": {
       "rev": "a0375eb6f7f944723162ef41c200ac6b364f53ac",
-      "src": "https://github.com/b0o/SchemaStore.nvim.git"
+      "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "blink.cmp": {
       "rev": "b19413d214068f316c78978b08264ed1c41830ec",
@@ -19,7 +19,7 @@
     },
     "bufferline.nvim": {
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
-      "src": "https://github.com/akinsho/bufferline.nvim.git",
+      "src": "https://github.com/akinsho/bufferline.nvim",
       "version": "'v4.9.1'"
     },
     "conform.nvim": {
@@ -44,7 +44,7 @@
     },
     "mini.pairs": {
       "rev": "d5a29b6254dad07757832db505ea5aeab9aad43a",
-      "src": "https://github.com/nvim-mini/mini.pairs.git"
+      "src": "https://github.com/nvim-mini/mini.pairs"
     },
     "noice.nvim": {
       "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
@@ -58,6 +58,10 @@
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
+    "nvim-highlight-colors": {
+      "rev": "e2cb22089cc2358b2b995c09578224f142de6039",
+      "src": "https://github.com/brenoprata10/nvim-highlight-colors"
+    },
     "nvim-lspconfig": {
       "rev": "0b38bc74487e73489624d61396af7805af9cc75f",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -68,7 +72,7 @@
     },
     "nvim-ts-autotag": {
       "rev": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc",
-      "src": "https://github.com/windwp/nvim-ts-autotag.git"
+      "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
       "rev": "6788013bb9cb784e606ada44206b0e755e4323d7",

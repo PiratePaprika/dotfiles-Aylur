@@ -114,6 +114,7 @@ end
 map("n", "<leader>uf", toggle_format, "Toggle Format on Save")
 map("n", "<leader>ud", toggle_diagnostics, "Toggle Diagnostics")
 map("n", "<leader>um", toggle_minimal, "Toggle Minimal")
+map("n", "<leader>uc", require("nvim-highlight-colors").toggle, "Toggle Color Highlight")
 
 -- lsp
 local function lsp_references()

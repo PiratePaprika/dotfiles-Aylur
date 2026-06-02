@@ -110,3 +110,8 @@ require("blink.cmp").setup({
 		["<C-y>"] = { "select_and_accept" },
 	},
 })
+
+require("nvim-highlight-colors").setup({
+	-- render = "virtual",
+	-- virtual_symbol = "⬤",
+})

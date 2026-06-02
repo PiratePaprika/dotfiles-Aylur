@@ -1,11 +1,12 @@
-{
+inputs @ {
   pkgs,
   config,
   lib,
   ...
 }: let
-  home = "${config.home.homeDirectory}/Projects/dotfiles";
-  ln = path: config.lib.file.mkOutOfStoreSymlink "${home}/${path}";
+  home = config.home.homeDirectory;
+  dotfiles = "${home}/Projects/dotfiles";
+  ln = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
 in {
   imports = [
     ./home-manager/browser.nix
@@ -15,11 +16,10 @@ in {
     ./home-manager/packages.nix
   ];
 
-  home.packages = [
-    (import ./nvim {inherit pkgs;})
-  ];
+  home.packages = [(import ./nvim inputs)];
 
   xdg.configFile = {
+    "environment.d/env.conf".source = ln "home/env.conf";
     "tmux".source = ln "home/tmux";
     "nvim".source = ln "home/nvim";
     "niri".source = ln "home/niri";
@@ -30,26 +30,21 @@ in {
     in ''
       source ${scripts}/custom-completions/git/git-completions.nu
       source ${scripts}/custom-completions/nix/nix-completions.nu
-      source ${scripts}/custom-completions/cargo/cargo-completions.nu
-      source ${scripts}/custom-completions/pnpm/pnpm-completions.nu
-      source ${scripts}/custom-completions/npm/npm-completions.nu
-      source ${scripts}/custom-completions/ssh/ssh-completions.nu
-      source ${scripts}/custom-completions/docker/docker-completions.nu
       source ${scripts}/modules/formats/from-env.nu
       source ${scripts}/modules/formats/to-ini.nu
     '';
 
     "gtk-3.0/bookmarks".text = ''
-      file://${config.home.homeDirectory}/Projects
-      file://${config.home.homeDirectory}/Work
-      file://${config.home.homeDirectory}/Desktop
-      file://${config.home.homeDirectory}/Downloads
-      file://${config.home.homeDirectory}/Documents
-      file://${config.home.homeDirectory}/.config Config
-      file://${config.home.homeDirectory}/Vault
-      file://${config.home.homeDirectory}/Pictures
-      file://${config.home.homeDirectory}/Music
-      file://${config.home.homeDirectory}/Videos
+      file://${home}/Projects
+      file://${home}/Work
+      file://${home}/Desktop
+      file://${home}/Downloads
+      file://${home}/Documents
+      file://${home}/.config Config
+      file://${home}/Vault
+      file://${home}/Pictures
+      file://${home}/Music
+      file://${home}/Videos
     '';
 
     "git/config".text = lib.generators.toGitINI {

@@ -33,6 +33,8 @@
   '';
 in {
   home.packages = [
+    pkgs.distrobox
+
     (mkBox "ubuntu" {
       image = "quay.io/toolbx/ubuntu-toolbox:latest";
       packages = with pkgs; [nushell starship];

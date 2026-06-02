@@ -5,8 +5,11 @@ inputs: {
     };
   };
 
+  programs.chromium.enable = true;
+
   programs.firefox = {
     enable = true;
+    configPath = "${inputs.config.xdg.configHome}/mozilla/firefox";
     profiles.default = {
       name = "Default";
       settings = {

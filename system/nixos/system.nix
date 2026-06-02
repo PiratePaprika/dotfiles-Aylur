@@ -23,14 +23,28 @@
   # dconf
   programs.dconf.enable = true;
 
+  # env
+  environment = {
+    localBinInPath = true;
+    variables = {
+      EDITOR = "nvim";
+      PAGER = "bat";
+    };
+  };
+
   # packages
   environment.systemPackages = with pkgs; [
     home-manager
     neovim
     git
     wget
-    firefox
-    chromium
+    tmux
+    nushell
+    bat
+    eza
+    fd
+    ripgrep
+    fzf
   ];
 
   # services
@@ -40,7 +54,6 @@
       excludePackages = [pkgs.xterm];
     };
     sysprof.enable = true;
-    printing.enable = false;
     flatpak.enable = true;
   };
 

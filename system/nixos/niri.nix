@@ -19,6 +19,7 @@
 
   environment.systemPackages = let
     system = pkgs.stdenv.hostPlatform.system;
+    astal = inputs.astal.packages.${system};
     marble-default = inputs.marble-shell.packages.${system}.default;
     marble-shell = marble-default.overrideAttrs (prev: {
       pnpmDeps = prev.pnpmDeps.overrideAttrs {
@@ -27,11 +28,14 @@
     });
   in [
     marble-shell
-    pkgs.astal.mpris
+    astal.mpris
+    astal.notifd
     pkgs.brightnessctl
     pkgs.pulseaudio # pactl
     pkgs.slurp
     pkgs.wayshot
+    pkgs.wl-clipboard
+    pkgs.wf-recorder
     pkgs.swappy
     pkgs.loupe
     pkgs.nautilus
@@ -45,6 +49,7 @@
     pkgs.gnome-calculator
     pkgs.gnome-clocks
     pkgs.gnome-software # for flatpak
+    pkgs.nerd-fonts.ubuntu
   ];
 
   services = {

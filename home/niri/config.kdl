@@ -43,7 +43,6 @@ layer-rule {
 layout {
     gaps 0
 
-    empty-workspace-above-first
     center-focused-column "never"
 
     default-column-width {
@@ -53,7 +52,6 @@ layout {
     focus-ring { off; }
     border { off; }
     shadow { off; }
-
 
     struts {
         left 0
@@ -119,6 +117,9 @@ binds {
     Mod+W { spawn "firefox"; }
     Mod+E { spawn "nautilus"; }
     Mod+R { spawn "marble" "launcher"; }
+    Alt+Space { spawn "gdbus" "call" "--session" "--dest" "marble.Shell" "--object-path" "/marble/Shell" "--method" "marble.Shell.OpenLauncher" "''"; }
+
+
 
     Alt+Q { close-window; }
 

@@ -54,6 +54,7 @@
     };
 in {
   home.packages = [
+    # dev
     pkgs.nodejs_24
     pkgs.bun
     pkgs.deno
@@ -68,5 +69,41 @@ in {
     pkgs.rustup
     pkgs.go
     pkgs.clang-tools
+
+    # cli
+    pkgs.imagemagick
+    pkgs.tmux
+    pkgs.nushell
+    pkgs.starship
+    pkgs.bat
+    pkgs.eza
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.fzf
+    pkgs.lazydocker
+    pkgs.lazygit
+    pkgs.btop
+    pkgs.libnotify
+
+    # music
+    pkgs.yabridge
+    pkgs.yabridgectl
+    pkgs.wine-staging
+
+    # themes
+    pkgs.adw-gtk3
+    pkgs.yaru-theme
+
+    # icons
+    pkgs.qogir-icon-theme
+    pkgs.morewaita-icon-theme
+    pkgs.papirus-icon-theme
+
+    # fonts
+    pkgs.nerd-fonts.caskaydia-cove
+    pkgs.nerd-fonts.ubuntu
+
+    # apps
+    (pkgs.mpv.override {scripts = [pkgs.mpvScripts.mpris];})
   ];
 }

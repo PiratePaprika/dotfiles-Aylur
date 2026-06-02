@@ -22,8 +22,9 @@ vim.pack.add({
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
 	{ src = "https://github.com/folke/noice.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/windwp/nvim-ts-autotag.git" },
-	{ src = "https://github.com/b0o/SchemaStore.nvim.git" },
+	{ src = "https://github.com/windwp/nvim-ts-autotag" },
+	{ src = "https://github.com/b0o/SchemaStore.nvim" },
+	{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 })
 
 -- config
